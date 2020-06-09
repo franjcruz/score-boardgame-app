@@ -1,0 +1,29 @@
+<ion-searchbar
+  #boardgameSearchbar
+  placeholder="Add boardgame to list"
+  (ionInput)="searchBoardgame($event)"
+></ion-searchbar>
+
+<ion-list inset [hidden]="!boardgamesSearch">
+  <ion-item
+    *ngFor="let game of boardgamesSearch?.games"
+    (click)="addBoardgame(game)"
+  >
+    <ion-thumbnail slot="start">
+      <ion-img [src]="game.images.small"></ion-img>
+    </ion-thumbnail>
+    <ion-label>{{ game.name }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<ion-card *ngFor="let game of boardgamesList">
+  <img [src]="game.images.large" />
+  <ion-card-header>
+    <ion-card-subtitle>{{ game.designer }}</ion-card-subtitle>
+    <ion-card-title>{{ game.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ game.description }}
+  </ion-card-content>
+</ion-card>
