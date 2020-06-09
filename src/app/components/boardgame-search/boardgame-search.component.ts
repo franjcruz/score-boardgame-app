@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
-import { Searchbar } from 'ionic-angular';
+import { IonSearchbar } from '@ionic/angular';
 import { Boardgame } from 'src/app/models/boardgame';
 
 import { BoardgameExternalService } from './../../services/boardgame-external/boardgame-external.service';
@@ -15,7 +15,7 @@ export class BoardgameSearchComponent implements OnInit {
   boardgamesSearch: any;
   boardgamesList: Boardgame[];
 
-  @ViewChild('boardgameSearchbar') searchbar: Searchbar;
+  @ViewChild('boardgameSearchbar') searchbar: IonSearchbar;
 
   constructor(
     private boardgameExternalService: BoardgameExternalService,
